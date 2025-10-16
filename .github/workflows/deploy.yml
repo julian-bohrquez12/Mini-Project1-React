@@ -1,18 +1,9 @@
 name: Deploy React app to GitHub Pages
-
 on:
   push:
     branches:
-<<<<<<< HEAD
       - develop  # Set the branch you want to deploy from
-# muy bueno el trabajo
-=======
-      - develop  # o 'master' si esa es tu rama principal
-
-permissions:
-  contents: write
-
->>>>>>> 00ea0e82e0a809f4b93615cc6847d89424af13d6
+# muy bueno el
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -20,32 +11,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
+      
+      - name: instalar Node.jobs
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-
+          node-version: 20  # Specify the Node.js version you want to use
+      
       - name: Install dependencies
         run: npm install
 
-<<<<<<< HEAD
      
 
       - name: Build del proyecto
-=======
-      - name: Build project
->>>>>>> 00ea0e82e0a809f4b93615cc6847d89424af13d6
         run: npm run build
-
+      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-<<<<<<< HEAD
           publish_branch: gh-pages
 
-=======
-          publish_branch: gh-pages   # 👈 crea la rama correcta para GitHub Pages
->>>>>>> 00ea0e82e0a809f4b93615cc6847d89424af13d6
