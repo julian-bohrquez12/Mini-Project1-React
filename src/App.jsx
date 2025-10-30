@@ -1,15 +1,13 @@
+import Sena from "./Sena";
+import Card from "./Card";
 
-import Card from './Card'
-
-export default function App(){
-
-
+function App() {
   return (
-
     <div>
+      <Sena />
       <Card />
     </div>
-  )
-
+  );
 }
 
+export default App;

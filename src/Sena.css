@@ -1,0 +1,123 @@
+.sena-container {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.sena-header {
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #bbb;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.sena-logo {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #333;
+  border-radius: 50%;
+}
+
+.sena-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.sena-nav a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+}
+
+.sena-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Títulos */
+.sena-titulos {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.sena-titulos h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sena-titulos h2,
+.sena-titulos h3 {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Cuadros */
+.sena-programas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.sena-cuadro {
+  border: 1px solid #777;
+  border-radius: 8px;
+  padding: 30px;
+  background-color: #fff;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.sena-cuadro:hover {
+  background-color: #e0e0e0;
+}
+
+/* Formulario */
+.sena-form {
+  border: 1px solid #777;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sena-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.sena-form input,
+.sena-form textarea {
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+}
+
+.sena-form button {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.sena-form button:hover {
+  background-color: #555;
+}
