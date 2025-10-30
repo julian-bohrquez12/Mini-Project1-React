@@ -1,59 +1,66 @@
+import React from 'react';
+import Card from './Card'; // Importamos el componente Card
+import './App.css';       // Importamos los estilos
 
-import { useState, useEffect } from 'react'
-
-export default function Card() {
-  const [darkMode, setDarkMode] = useState (() => {
-
-    const savedTheme = localStorage.getItem('darkMode');
-    
-    return savedTheme === 'true'
-
-  }
-
-  )
-
-  
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode)
-  }
-
-
-  useEffect (() => {
-    localStorage.setItem('darkMode', darkMode)
-  }
-
-
-), [darkMode];
+function App() {
+  // Array con los nombres de los programas para las tarjetas
+  const programas = [
+    'ADSO',
+    'REDES DE DATOS',
+    'ANIMACIÓN 3D',
+    'LOGISTICA',
+    'MERCADEO',
+    'SISTEMAS'
+  ];
 
   return (
-    <div
-      className={`max-w-sm mx-auto p-6 shadow-md rounded-lg mt-5 transition duration-300 ${darkMode ? 'bg-gray-800' : 'bg-white'}`}
-    >
-      <img
-        src="https://i.pravatar.cc/150?img=3"
-        alt="avatar"
-        className="rounded-full w-32 h-32 mx-auto"
-      />
-      <h2
-        className={`mt-4 text-2xl font-semibold text-gray-800 text-center  ${darkMode ? 'text-white' : 'text-gray-600'}`}
-      >
-        {' '}
-        JOSE GOMEZ VILLA
-      </h2>
-      <p
-        className={`mt-2 text-gray-600 text-center ${darkMode ? 'text-white' : 'text-gray-600'}`}
-      >
-        {' '}
-        Desarrollador d Software Front-End apasionado por React y el diseño
-        UI/UX
-      </p>
-      <button
-        onClick={toggleTheme}
-        className={`mt-4 px-4  py-2 rounded shadow-md ${darkMode ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'} transition duration-300  `}
-      >
-        CAMBIAR TEMA
-      </button>
+    <div className="container">
+      {/* --- Barra de Navegación --- */}
+      <nav className="navbar">
+        <div className="logo"></div> {/* El círculo del logo */}
+        <ul>
+          <li><a href="#">INICIO</a></li>
+          <li><a href="#">PROGRAMAS</a></li>
+          <li><a href="#">CONTACTO</a></li>
+        </ul>
+      </nav>
+
+      {/* --- Encabezado --- */}
+      <header className="main-header">
+        <h1>SERVICIO NACIONAL DE APRENDIZAJE</h1>
+        <h2>CENTRO DE GESTIÓN DE MERCADOS</h2>
+        <h3>BOGOTÁ</h3>
+      </header>
+
+      {/* --- Cuadrícula de Tarjetas --- */}
+      <main className="card-grid">
+        {/* Mapeamos el array de programas para crear una Card por cada uno */}
+        {programas.map((titulo) => (
+          <Card key={titulo} title={titulo} />
+        ))}
+      </main>
+
+      {/* --- Formulario de Contacto --- */}
+      <form className="contact-form">
+        <div className="form-group">
+          <label htmlFor="nombres">NOMBRES</label>
+          <input type="text" id="nombres" />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="correo">CORREO</label>
+          <input type="email" id="correo" />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="mensaje">MENSAJE</label>
+          <textarea id="mensaje"></textarea>
+        </div>
+
+        <button type="submit">ENVIAR</button>
+      </form>
     </div>
-  )
+  );
 }
+
+export default App;
